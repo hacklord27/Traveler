@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Traveler.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/ViewPage1.cshtml";
+}
+
+<h2>Quản lý đơn đặt </h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlotNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tour.TourName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlotNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactPhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tour.TourName)
+        </td>
+        <td>
+            @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.ID }) |
+
+            @Html.ActionLink("Xóa", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,70 @@
+@model Traveler.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/ViewPage1.cshtml";
+}
+
+<h2>Delete Confirmation</h2>
+
+<div>
+    <h4>Are you sure you want to delete this book?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingDay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookingDay)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingCode)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookingCode)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SlotNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SlotNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactPhoneNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+        <!-- Add similar fields for other properties -->
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                @Html.ActionLink("Cancel", "Index", null, new { @class = "btn btn-default" })
+            </div>
+        </div>
+    }
+</div>
